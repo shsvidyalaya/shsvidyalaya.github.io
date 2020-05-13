@@ -71,10 +71,12 @@ export class HeaderComponent implements OnInit {
 
   constructor() {
     this.list = [
-        {name: 'Home'},
         {name: 'About'},
+        {name: 'Facilities'},
+        {name: 'Academics'},
+        {name: 'Admissions'},
+        {name: 'Academics'},
         {name: 'Gallery'},
-        {name: 'JoinUs'},
         {name: 'TrustMember'},
         {name: 'Contact'}
     ];
