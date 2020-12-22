@@ -1,191 +1,323 @@
-nav {
-    &.bg-light {
-        position:fixed;
-        background-color:rgba(247, 160, 92, .8)!important;
-        width:100%;
-        z-index: 9;
-        padding:0 1rem;
+::ng-deep .main-page{
+    nav {   
+        background-color:#fff !important;
+       
     }
-   
 }
 
+nav {
+        background-color:#f0f0f0;
+        width:calc(100% - 70px);
+        z-index: 9;
+        padding:10px;
+        position: fixed;
+        top:0px;
+       
+        li:not(.login){
+            margin-top:10px;
+        }
+        .logo{
+            img{
+                height:70px;
+            width:auto;
+            }
+        }
+        .login{
+            // border:1px solid #000;
+            margin:0 15px;
+            a{
+                color:#000 !important;
+                text-align: center;
+                svg{
+                    fill:#bf272d;
+                }
+                &:hover{
+                    background:none !important;
+                }
+            }
+            &.dropping{
+                position:relative;
+                &:hover{
+                    .dropper{
+                        display:block;
+                    }
+                }
+            }
+            .dropper{
+                background:#fff;
+                border-bottom:2px solid #f44336;
+                box-shadow: 1px 3px 6px rgb(72 71 71 / 30%);
+                display: none;
+                position: absolute;
+                top: 62px;
+                right: 0px;
+                width: 260px;
+                a{
+                    display:block;
+                    border-bottom:1px solid #ccc;
+                    &:hover{
+                        color:#ccc;
+                    }
+                    &:last-child{
+                        border:none;
+                    }
+                }
+            }
+        }
+}
+
+
+.navbar-vertical {
+    position:fixed;
+    z-index: 1030;
+    width: 70px;
+    height: 100vh;
+    background-color: #f0f0f0;
+    top: 0px;
+    left:0px;
+    padding-left: 15px;
+    a{
+        padding:0px;
+    }
+    
+    .social-net {
+        display: flex;
+          flex-flow: column nowrap;
+          align-items: flex-start;
+        li {
+          writing-mode: vertical-lr;
+          transform: rotate(180deg);
+          transform-origin: center center;
+          list-style-type: none;
+         a {
+            display: block;
+            padding:0px;
+            margin:0;
+            margin-right: -5px;
+            color:#000;
+            font-size:16px;
+            float:left;
+            i{
+                float:left;
+                line-height: 35px;
+            }
+            span{
+                margin:10px;
+                float:left
+            }
+          }
+          svg{
+              transform: rotate(90deg);
+              fill:#bf272d;
+          }
+        }
+      }
+    
+}
+
+.notice-board{
+    position:fixed;
+    bottom: 10px;
+    left: 3px;
+    i{
+        background:#bf272d;
+        padding:10px;
+    }
+    a{
+        padding:15px !important;
+    }
+    svg{
+        fill: #fff !important;
+        margin:0 auto;
+        display:block;
+    }
+}
+
+::ng-deep .notification-popup.modal{
+    display: flex !important;
+    align-items: center;
+.modal-content{
+    background-color:#3e65ac;
+    padding: 0 15px;
+    .modal-title{
+        margin-left:15px;
+        font-family: "Lora", serif;
+        color:#fff;
+    }
+    i{
+        margin-top: 9px;
+        display: block;
+    }
+    svg{
+        fill:#fff;
+    }
+    p{
+        color:#fff;
+        font-size:28px;
+        align-self: center;
+    }
+    .btn{
+        outline: none;
+        background:none;
+        border:2px solid #fff;
+    }
+}}
+
+
+.login-form{
+    .row{
+        margin-bottom:15px;
+    }
+	&:first-child{
+        border-right:1px solid #ccc;
+    }
+    .form-check-label{
+        margin-left:15px;
+    }
+}
 .navbar-nav-list{
-    list-style-type: none;
-    margin: 0 auto;
+        float: right;
+        margin-left: auto;
+        list-style-type: none;
+        margin-bottom: 0;
     .nav-item{
         font-size:14px;
         float:left;
-        padding:1rem 1rem;
+        a{
+            padding:10px;
+            font-size:16px;
+            font-weight:bold;
+            color:#000;
+            text-decoration: none;
+            &.active, &:hover{
+                color:#fff;
+                background:#f44336;
+             }
+        }
         
        &.quick-link{
             a{
                 padding-right:0px;
             }
         }
-        a{
-            padding:0px;
-            font-size:16px;
-            font-weight:bold;
-            color:#fff;
-            text-decoration: none;
-            &.active{
-                color:#f44336;
-            }
-            &:hover{
-                color:#f44336;
-            }
-        }
+        
         svg{
             width:20px;
             height:20px;
             margin-right:5px;
          }
 
-         .sub-nav{
-             list-style-type: none;
-             border-top:5px solid #276caa;
-             position: absolute;
-             top:-155px;
-             left:0px;
-             width:100%;
-             height:0px;
-             background:#fff;
-             transition: all .5s;
-             padding:30px 0 50px;
-             margin:0px;
-             display: none;
-             img{
-                 max-width: 100%;
-                 height:auto;
+         &.social-media{
+            svg{
+                width:24px;
+                height:24px;
+                margin-right:5px;
              }
-             li{
-                 &.inner-list{
-                    border-top:1px dotted #ccc;
-                    padding:10px 0;
-                    float:left;
-                    display:block;
-                    width:100%;
-                }
-                a{
-                    color: #276caa;
-                    padding: 0;
-                    margin-top: 0px;
-                    font-size:12px;
-                  }
-             }
-             a{
-                margin-top: 10px;
-                float: left;  
-             }
-             
-             h6{
-                 font-size:14px;
-             }
-             }
-             &.nav-dropdown-list{
-                 &:hover {
-                 background:#276caa;
-                 .sub-nav{
-                   height:auto;
-                   top:70px;
-                   display: block;
-                 }
-                }
-             }
+         }
+
     }
 }
 
-.navbar-light .navbar-nav .nav-link{
-    color:#fff;
-}
-.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover{
-    color:#fff;
-}
+.newsletter{
+    background:#3e65ac;
+    padding:40px 0;
+    .form-inline{
+        margin:0 auto;
+    }
+    label{
+        color:#000;
+        font-size:20px;
+        margin-right:15px;
 
-.quick-link{
-    svg{
-        fill:#fff;
     }
-}
-
-.slider-menu{
-    width: 350px;
-    padding:10px;
-    position: fixed;
-    height: calc(100vh);
-    top: 0;
-    background: #fff;
-    z-index: 20;
-    right: -350px;
-    transition: all .5s;
-    .close-slide{
-        float:right;
-        padding: 10px;
-        margin-top: 10px;
+    .btn{
+        background:#000;
+        color:#fff;
+        margin-left:15px;
+        padding:9px 15px;
+        text-transform: uppercase;
+        font-size:14px;
     }
-    &.active{
-        right:0px;
-    }
-    ul{
-        margin:0;
-        padding:0;
-    }
-    li.menu-list{
-        list-style-type: none;
-        a{
-        padding: 10px 10px;
-        font-size: 14px;
-        color:#555555;
-        display: block;
-        text-transform: capitalize;
-        text-decoration:none;
-        &.active, &:focus{
-            color:#f44336;   
-        }
-        }
-    }
-    .navbar-brand{
-        margin:10px 0 10px 10px;
-        span{
-             &.company-name{
-                color:#276caa;
-                font-size: 35px;
-                line-height: 30px;
-            }
-            &.company-type{
-               color:#000;
-               font-size: 21px;
-               line-height: 15px;
-               margin-top: 5px;
-            }
-        } 
-        svg{
-            width: 50px;
-            height: 50px;
-        }
-    }
-
 }
 
 .overlay{
     display:none;
-    background:rgba(0, 0, 0, 0.5);
+    background: rgba(225, 225, 225);
     position: fixed;
     width: 100%;
     height: calc(100vh);
     top:0;
+    left:0;
+    flex-direction: column; /* make main-axis vertical */
+    justify-content: center; /* align items vertically, in this case */
+    align-items: center; /* align items horizontally, in this case */
     &.active{
-        display:block;
-        z-index:10;
+        display:flex;
+        z-index:10000;
     }
+    img{
+        position: absolute;
+        z-index: -1;
+        opacity: 0.1;
+    }
+    .close-menu{
+        position: absolute;
+        top:25px;
+        left:25px;
+    }
+     ul.main-nav{
+            float:none;
+            li{
+                float: none;
+                text-align: center;
+                margin-bottom: 20px;
+                a{
+                    padding:15px;
+                    color:#000;
+                    font-size:18px;
+                    font-weight:bold;
+                    text-decoration: none;
+                    &:hover, &.active{
+                        color:#f44336;
+                    }
+                }
+            
+            }
+        }
+        .general-info-nav{
+            position: absolute;
+            bottom:10px;
+            text-align:center;
+            width:100%;
+            a{
+                padding: 0 10px;
+                &:hover{
+                    color:#f44336;
+                }
+            }
+        }
 }
 
-
-
 @media (max-width: 576px){
-    .navbar-nav-list{
-        .nav-item{
-           &:not(:last-child){
+
+    .login-form{
+         &:first-child{
+            border-bottom:1px solid #ccc;
+            border-right:none;
+            padding-bottom: 15px;
+        }
+       
+    }
+
+	.header-nav{
+        position: absolute;
+        z-index: 99999999;
+        top: 10px;
+        right: 70px;
+        display: block;
+        .login{
+            margin:0;
+            span{
                 display:none;
             }
         }

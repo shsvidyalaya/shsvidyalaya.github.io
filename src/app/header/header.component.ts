@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, TemplateRef } from '@angular/core';
 import { viewClassName } from '@angular/compiler';
-import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource} from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource, NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 
 
@@ -11,8 +12,18 @@ import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource} from '@ng-bootstrap/ng
 })
 export class HeaderComponent implements OnInit {
 
+  @ViewChild('notify', { static: true }) content: TemplateRef<any>;
+
+  ngOnInit() {
+    this.modalService.open(this.content, { size: 'lg', windowClass: 'notification-popup' });
+  }
+
+
   showNavigationIndicators = false;
   showNavigationArrows = false;
+
+  isOpen = true;
+  isSlideOpen = true;
 
   slideConfig = {
     slidesToShow: 3,
@@ -43,73 +54,72 @@ export class HeaderComponent implements OnInit {
     ]
   };
 
-  banner = [
-    {
-      img: 'assets/images/banner',
-      title: 'WE SPECIALIZE IN IMPROVING',
-      title_2:'OPERATIONAL PERFORMANCE AND IT DELIVERY.',
-      description: 'We do this by improving the way our clients use people, processes and technologies. Here is the place to envision, discover and fulfil your technology needs.'
-    },
-    // {
-    //   img: 'assets/images/banner',
-    //   title: 'WE SPECIALIZE IN IMPROVING',
-    //   title_2:'OPERATIONAL PERFORMANCE AND IT DELIVERY.',
-    //   description: 'We do this by improving the way our clients use people.'
-    // },
-    // {
-    //   img: 'assets/images/banner',
-    //   title: 'WE SPECIALIZE IN IMPROVING',
-    //   title_2:'OPERATIONAL PERFORMANCE AND IT DELIVERY.',
-    //   description: 'We do this by improving processes and technologies. Here is the place to envision, discover and fulfil your technology needs.'
-    // }
-  ];
 
   list;
   managedService;
   managedServiceSoftEng;
-  isOpen = true;
 
-  constructor() {
+  closeResult = '';
+
+  constructor(private modalService: NgbModal, private router: Router) {
     this.list = [
-        {name: 'About'},
-        {name: 'Facilities'},
-        {name: 'Academics'},
-        {name: 'Admissions'},
-        {name: 'Academics'},
-        {name: 'Gallery'},
-        {name: 'TrustMember'},
-        {name: 'Contact'}
+        {name: 'Home'},
+        {name: 'shsStory'},
+        {name: 'shsLeague'},
+        {name: 'shsCulture'},
+        {name: 'shsEdge'},
+        {name: 'JoinshsPride'},
+        {name: 'shsCorner'},
+        {name: 'CatchUpOverCoffee'}
+        // {name: 'Eng'},
+        //{name: 'HowToApply'},
     ];
-    this.managedService = [
-      {name: 'SOFTWARE ENGINEERING',
-      managedServiceList : [
-        {name: 'Product Engineering'},
-        {name: 'Application Development'},
-        {name: 'UX/UI Development'},
-        {name: 'Software Testing & QA'}
-      ]},
-      {name: 'DATA MANAGEMENT',
-      managedServiceList : [
-        {name:'Cleanse Dataset'},
-        {name:'Data Mapping & Conversion'},
-        {name:'Data Migration & Consolidation'},
-        {name:'Spend Analysis'}
-      ]},
-      {name:'IT STAFFING & TRAINING',
-      managedServiceList : [
-        {name:'Staffing Services'},
-        {name:'Industries'},
-        {name:'Courses'},
-        {name:'Program Calendar'}
-      ]}
-    ]
   }
+
+   open(content) {
+      this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', size: 'lg'}).result.then((result) => {
+        this.closeResult = `Closed with: ${result}`;
+      }, (reason) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      });
+    }
+
+    notifyOpen(content) {
+      this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', size: 'lg', windowClass: 'notification-popup'}).result.then((result) => {
+        this.closeResult = `Closed with: ${result}`;
+      }, (reason) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      });
+    }
+
+    openlogin(content) {
+      this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', size: 'lg', windowClass: 'sign'}).result.then((result) => {
+        this.closeResult = `Closed with: ${result}`;
+      }, (reason) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      });
+    }
+
+    private getDismissReason(reason: any): string {
+      if (reason === ModalDismissReasons.ESC) {
+        return 'by pressing ESC';
+      } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+        return 'by clicking on a backdrop';
+      } else {
+        return `with: ${reason}`;
+      }
+    }
+
+
 
   slideToggel() {
+    const body = document.getElementsByTagName('body')[0];
     this.isOpen = !this.isOpen;
-  }
-
-  ngOnInit() {
+    if (!this.isOpen) {
+      body.classList.add('remove-scroll');
+    } else {
+      body.classList.remove('remove-scroll');
+    }
   }
 
   paused = false;
@@ -137,5 +147,9 @@ export class HeaderComponent implements OnInit {
       this.togglePaused();
     }
   }
-
+  knowMore = function(text) {
+    if (text === 'admission') {
+      this.router.navigateByUrl('/JoinshsPride', {skipLocationChange: true});
+      this.modalService.dismissAll();
+    }};
 }

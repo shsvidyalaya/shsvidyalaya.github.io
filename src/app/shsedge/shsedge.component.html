@@ -1,0 +1,138 @@
+<section class="section-study-culture">
+    <div class="breadcum">
+        <a>
+            <i class="icon icon-ex-small">
+                <svg focusable="false">
+                    <use xlink:href="#icon_home"></use>
+                </svg>
+            </i>
+        </a>
+        <span> |</span>
+        <a>
+            SHS VIDYALAYA Edge
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <h1 data-aos="fade-up" data-aos-once="true">
+                <br>
+                shs Edge
+            </h1>
+            <div class="panel-body" data-aos="fade-up" data-aos-once="true">
+                <p> integrated curriculum at shs comprises & aligns with all  learning outcomes in CBSE, IGCSE
+                    & AERO standards.  curriculum includes reading, writing, listening, speaking, social studies,
+                    math, science, health, physical education, music, and visual arts, experiential learning, public
+                    speaking, emphasis on projects, etc. We at shs will utilize different approaches of integration
+                    best suited for  students:
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-once="true">
+            <img src="assets/images/8.jpg">
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row edge-info">
+        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+        <div class="col-lg-11 col-md-11 col-sm-12 float-right">
+            <div class="panel" data-aos="fade-up" data-aos-once="true">
+                <h3 class="heading-title"><span>Multi-Disciplinary Integration</span></h3>
+                <p>
+                    To focus on reading, writing, and communication in all its forms, in language arts. This approach
+                    focuses on integration within one subject area, teaching  content with deeper understanding.
+                </p>
+            </div>
+            <div class="panel" data-aos="fade-up" data-aos-once="true">
+                <h3 class="heading-title"><span>Inter-disciplinary integration</span></h3>
+                <p>
+                    Focuses on project-based learning in more than one subject area. Interdisciplinary integration
+                    assembles  teaching of several subjects around common issues, or problems, highlighting matic
+                    concepts in which a common me is studied.
+                </p>
+            </div>
+            <div class="panel" data-aos="fade-up" data-aos-once="true">
+                <h3 class="heading-title"><span>Trans-disciplinary integration</span></h3>
+                <p>
+                    Involves understanding  student’s interests, and concerns while encouraging m to ask questions
+                    to inquire about  subject matter from a variety of perspectives. Interdisciplinary integration
+                    incorporates information, involving students’ interests and questions
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="row edge-info">
+        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+        <div class="col-lg-11 col-md-11 col-sm-12 float-right">
+            
+            <h1 class="plan-title" data-aos="fade-up" data-aos-once="true"><span>Key Areas of Learning</span></h1>
+    </div>
+       
+        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+        <div class="col-lg-11 col-md-11 col-sm-12 float-right">
+           
+            <div class="panel" data-aos="fade-up" data-aos-once="true">
+                <h3 class="heading-title"><span>Communication and Language</span></h3>
+                <p>
+                   Communication and language development is about different ways
+                a child understands and communicates, using words, gestures or facial expressions. Being an
+                indicator of fine motor skill development and a reflection of cognitive development, reading
+                is one of  best ways to encourage communication and language development.</p>
+            </div>
+            <div class="panel" data-aos="fade-up" data-aos-once="true">
+                <h3 class="heading-title"><span>Personal, Social and Emotional Development</span></h3>
+                <p>
+                    It’s essential for children to feel
+                comfortable, emotionally and physically to learn effectively. Helping children to learn how
+                to regulate and manage ir feelings is, refore, a vital stepping stone for success in
+                learning and life.
+                </p>
+            </div>
+            <div class="panel" data-aos="fade-up" data-aos-once="true">
+                <h3 class="heading-title"><span>Physical Development</span></h3>
+                <p>
+                    Children meet a myriad of physical development milestones in 
+                first few years of life, from walking to drawing. Physical development focuses on increasing
+                 skill and performance of  body.  development of children’s physical skills should
+                be developed holistically across all areas of learning.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section-explicit">
+
+    <div class="container">
+        <div class="row">
+            
+            <h1 class="plan-title" data-aos="fade-up" data-aos-once="true"><span>Explicit Areas of Learning</span></h1>
+    </div>
+     <ngx-slick-carousel class="row explicit-sec nav-tabs" ngbNav #nav="ngbNav" [(activeId)]="active"
+     #slickModal="slick-carousel" [config]="explicitConfig" data-aos="fade-up" data-aos-once="true">
+              <li ngxSlickItem class="add-info" ngbNavItem="{{i+1}}"  *ngFor="let list of explicit; index as i">
+                  <a ngbNavLink class="panel">
+                      <div class="panel-heading">
+                          <h1>{{list.bar}}</h1>
+                          <i class="icon icon-medium">
+                            <svg focusable="false">
+                                <use attr.xlink:href="{{list.icon}}"></use>
+                            </svg>
+                        </i>
+                              <h6 class="bar _{{list.bar}}">
+                                  {{list.title}}
+                              </h6>
+                            </div>
+                           
+                        </a>
+                     <ng-template ngbNavContent>
+                       {{list.description}}
+                    </ng-template>
+                </li>
+        </ngx-slick-carousel>   
+
+            <div [ngbNavOutlet]="nav" class="tab-info"></div>
+ </div> 
+  </section>

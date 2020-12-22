@@ -1,0 +1,166 @@
+.section-inner-subheader{
+	.row-f, .row{
+		margin:70px 0 100px; 
+		position: relative;
+	}
+	.img-flag{
+		position: absolute;
+		right:0;
+		top:0;
+		width: 40%;
+	}
+	.panel {
+		background:#fff;
+		padding:50px;
+		p{
+			font-size:72px;
+			color:#f0f0f0;
+			font-weight: bold;
+		}
+		.panel-body{
+			width:50%;
+		}
+	}
+	h1{
+		margin-left:65px;
+		margin-bottom: 35px;
+	}
+	h6{
+		margin-left:65px;
+	}
+
+	.img-flag{
+		position: absolute;
+		right:0;
+		top:0;
+		width: 50%;
+	}
+	.inner-contact-info{
+		background:#fff;
+		padding: 50px; 
+		.row{
+			margin:0px;	
+		}
+		p{
+		   color:#000;
+		   font-size:14px; 
+		   font-weight:normal;
+		   
+		   a{
+			   color:#000;
+
+		   }
+		}
+		.highlighted{
+			color:#bf272d;
+		}
+
+		.social-net{
+			float:right;
+			li{
+				float:left;
+				margin-right:15px;
+				svg{
+					fill:#bf272d;
+				}
+			}
+		}
+	}
+}
+.blob-article{
+    background:#fff;
+    padding:70px 0px;
+    h2{
+        margin-bottom:70px;
+	}
+	.btn-wrapper{
+		position: relative;
+		.div-btn{
+			background:#fff;
+			padding-left:20px;
+			float:right;
+			position: relative;
+    		z-index: 1;
+			.btn{
+				background:#bf272d;
+				padding:10px 20px;
+			}
+		}
+		&::after{
+			content: "";
+			position: absolute;
+			top:21px;
+			left:0px;
+			height:2px;
+			background:#000;
+			width:100%;
+		}
+	}
+}
+
+
+
+.recent-article{
+    .container{
+        background:#bf272d;
+		margin:70px auto;
+		h6{
+			color:#fff;
+			padding-top:20px;
+		}
+        h2{
+            position: relative;
+            padding: 30px 0 0;
+            span{
+                background:#bf272d;
+                padding-right:30px;
+                z-index: 2;
+                position: relative;
+                display: inline-block;
+                color:#fff;
+            }
+            &::after{
+                position: absolute;
+                top:50px;
+                left:0px;
+                height:1px;
+                width:100%;
+                background:#fff;
+                content: "";
+            }
+        }
+        .panel{
+            padding:30px 0;
+            color:#fff;
+            font-family:"Lora", serif;
+            h3{
+                padding-bottom:30px;
+                margin-bottom:30px;
+                border-bottom:1px solid #fff;
+			}
+			.btn{
+				border:2px solid #fff;
+				background:none !important;
+			}
+        }
+    }
+}
+
+
+@media (max-width: 576px){
+		.row-f, .row, h1{
+			margin-left:0px; 
+	}
+	.breadcum{
+		margin-left:15px;
+	}
+	.img-flag{
+		padding:15px;
+		position: static;
+		width:100%;
+	}
+	.panel-body{
+		width:100%;
+	}
+
+}

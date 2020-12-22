@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "SHS": {
+    "shs": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -32,13 +32,15 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss",
               "node_modules/slick-carousel/slick/slick.scss",
-              "node_modules/slick-carousel/slick/slick-theme.scss"
+              "node_modules/slick-carousel/slick/slick-theme.scss",
+              "node_modules/aos/dist/aos.css"
             ],
             "scripts": [
              "node_modules/jquery/dist/jquery.min.js",
              "node_modules/slick-carousel/slick/slick.min.js",
             "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "src/assets/svg/svg.js"
+              "src/assets/svg/svg.js",
+              "node_modules/aos/dist/aos.js"
             ]
           },
           "configurations": {
@@ -76,18 +78,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "SHS:build"
+            "browserTarget": "shs:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "SHS:build:production"
+              "browserTarget": "shs:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "SHS:build"
+            "browserTarget": "shs:build"
           }
         },
         "test": {
@@ -105,13 +107,15 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/slick-carousel/slick/slick.scss",
               "node_modules/slick-carousel/slick/slick-theme.scss",
+              "node_modules/aos/dist/aos.css",
               "src/styles.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/slick-carousel/slick/slick.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "src/assets/svg/svg.js"
+              "src/assets/svg/svg.js",
+              "node_modules/aos/dist/aos.js"
             ]
           }
         },
@@ -132,15 +136,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "SHS:serve"
+            "devServerTarget": "shs:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "SHS:serve:production"
+              "devServerTarget": "shs:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "SHS"
+  "defaultProject": "shs"
 }
