@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './footer/footer.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { CreateSpacePipe } from './space.pipe.module';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    CreateSpacePipe
   ],
   providers: [],
   bootstrap: [AppComponent]

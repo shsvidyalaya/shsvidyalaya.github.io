@@ -1,0 +1,290 @@
+.section-admission{
+  
+	.row-f, .row{
+		margin:70px 0 100px; 
+		position: relative;
+    }
+    .admission-info{
+        background:#fff;
+    }
+    .add-spec{
+		margin-left:35px;
+		margin-bottom:35px;
+        .row{
+            margin:0px;
+        }
+     .panel{
+            padding:0;
+            margin: 0 auto ;
+            display: block;
+            text-align: center;
+            p{
+                margin-top:25px;
+            }
+        }
+    }
+	.curriculum{
+		margin-bottom:0px;
+	}
+	.panel {
+		background:#fff;
+        padding:50px;
+        padding-bottom:0px;
+		.image-wrap{
+			width: 50%;
+    margin: -120px 0 26px 50px;
+		}
+		&.story-info{
+			background:#bf272d;
+			color:#fff;
+			position:relative;
+			.flying-plane{
+				position: absolute;
+				left:0px;
+				top:0px;
+				svg{
+					fill: #fff;
+					transform: rotate(90deg);
+    				margin-top: 5px;
+				}
+			}
+			&::after{
+				content: "";
+				position: absolute;
+				left:0px;
+				top:50px;
+				width: 3px;
+				height: 20px;
+				background: #fff;
+			}
+		}
+		
+	}
+	h1{
+		margin-left:65px;
+		margin-bottom: 35px;
+	}
+	h2{
+		position:relative;
+		padding-bottom:5px;
+		line-height: 60px;
+		margin-bottom: 30px;
+		&::before{
+			content:" ";
+			position: absolute;
+			bottom:0;
+			left:0;
+			width:50px;
+			height:2px;
+			background:#f0f0f0;
+		}
+	}
+	.img-flag{
+		position: absolute;
+		right:0;
+		top:0;
+		width: 40%;
+	}
+	ul.list{
+		margin:0px;
+		li{
+			color:#000;
+			&::before{
+				background:#bf272d;
+			}
+		}
+	}
+}
+
+.more-info{
+	float:none;
+	clear:both;
+	p{
+		margin:50px 0 70px 75px ;
+	}
+}
+
+.applycation-rules{
+    .btn{
+        width:75%;
+        padding:15px 0;
+        background:#bf272d;
+        font-family: "Lora", serif;
+        margin:25px auto 0;
+        font-size:24px;
+        display:block;
+    }
+}
+
+.section-admission-2{
+	margin:70px 0px;
+	.row{
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.bar{
+		position:relative;
+		padding-top:15px;
+		&::after{
+			content: "";
+			position: absolute;
+			top:0px;
+			left:0px;
+			width:100px;
+			height:5px;
+		}
+	}
+
+	.pp0{
+		&::after{
+		background:#3e65ac;}
+	}
+	.pp1{&::after{
+		background:#bf272d;}
+	}
+	.pp2{&::after{
+		background:#000000;}
+	}
+	.pp3{&::after{
+		background:#e4e4e4;}
+	}
+
+	.addmin-sec{
+		padding:0px;
+		.row{
+			margin-left:0px;
+		}
+		.add-info{
+			padding:2px;
+			display: flex;
+			&:first-child{
+				.panel{
+					margin-left:0px;
+				}
+			}
+		}
+	}
+	.admission-flag{
+		position:relative;
+		color:#fff;
+		padding:25px 0;
+		height:250px;
+		.btn{
+			border:1px solid #fff;
+			color:#fff;
+			background:none;
+		}
+	}
+	p{
+		white-space: pre;
+		margin-top:15px;
+	}
+		.panel{
+			background:url(../../assets/images/bulb.png) no-repeat 40px -10px #fff;
+			padding-top: 270px;
+			padding-bottom:50px;
+			width: 100%;
+			.panel-heading{
+				z-index: 2;
+				position: relative;
+			}
+			.btn{
+				position: absolute;
+				bottom:15px;
+				border:2px solid #000;
+				background:none;
+				color:#000;
+				z-index: 2;
+				}
+
+			&:hover{
+				.btn{
+					border:2px solid #fff;
+					background:none;
+					color:#fff;
+					}
+			}
+			
+			
+			&:hover{
+				.panel-heading{
+					.bar{
+						&::after{
+							background: #fff !important;
+						}
+					}
+					h3, p{
+						color:#fff;
+					}
+					
+				}
+				&::after{
+					content:'';
+					background:url(../../assets/images/bulb.jpg) no-repeat -65px -50px #bf272d;
+					position: absolute;
+					top: -25px;
+					left: 0px;
+					width: 100%;
+					height: calc(100% + 50px);
+					padding: 325px 20px 0;
+					z-index: 1;
+					box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.5);
+				
+			}
+			}
+			i{
+				margin:0 auto;
+				display:block;
+				text-align:center;
+			}
+			svg{
+				width:75px;
+				height:75px;
+			}
+			
+		}
+}
+
+
+
+@media (max-width: 576px){
+
+
+	.section-study-culture{
+		.row-f, .row, h1{
+			margin-left:0px; 
+	}
+	.breadcum{
+		margin-left:15px;
+	}
+	
+	.panel-body{
+		width:100%;
+	}
+}
+
+
+.section-admission{
+	.panel{
+		padding:40px 0;
+		.image-wrap{
+			width: 100% !important;
+			margin: 0px !important;
+		}
+	}
+	.section-admission-2 {
+		.addmin-sec {
+			.add-info{
+				margin-bottom:50px;
+			}
+		}
+		.panel{
+			padding: 270px 50px 50px !important;
+			width: 100%;
+		}
+	}
+}
+
+
+}

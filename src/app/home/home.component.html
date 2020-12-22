@@ -1,104 +1,88 @@
 <div class="main-banner">
-    <a class="navbar-brand" routerLink="home" skipLocationChange=true>
-      <div class="logo-container">
-        <img src="assets/images/tulshi-logo-flat.png">
-      </div>
-    </a>
-    <ngb-carousel #carousel interval="1000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
-      <ng-template ngbSlide *ngFor="let info of banner; index as i">
-        <div class="container">
-          <!-- <div class="carousel-caption">
-            <h3>{{info.title}}</h3>
-            <h3>{{info.title_2}}</h3>
-            <p>{{info.description}}</p>
-            <button type="submit" class="btn btn-primary">LEARN MORE</button>
-            <button type="submit" class="btn btn-warning">CONTACT US</button>
-          </div> -->
-        </div>
-        <a>
+    <!-- <ngb-carousel #carousel interval="5000" [showNavigationArrows]="showNavigationArrows" [pauseOnHover]="pauseOnHover"
+    (slide)="onSlide($event)">
+        <ng-template ngbSlide  *ngFor="let info of banner; index as i">
           <div class="picsum-img-wrapper">
-            <img src="assets/images/banner1.jpg" alt="My image {{i + 1}} description">
+            <img src="assets/images/banner{{i+1}}.jpg" alt="Random first slide">
           </div>
-        </a>
-      </ng-template>
-    </ngb-carousel>
-  </div>
-  
+          <div class="carousel-caption">
+           <h3>{{info.title}}</h3>
+            <p>{{info.description}}</p>
+          </div>
+        </ng-template>     
+      </ngb-carousel> -->
 
- 
+    <video controls autoplay>
+        <source src="assets/images/banner.mp4" type="video/mp4">
+        Your browser does not support  video tag.
+    </video>
 
-<section class="section-about">
+</div>
 
-
+<section class="section-admission">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 center">
-                <h1>WELCOME TO <span class="heading-highlight">SHS VIDYALAYA</span></h1>
-                <h6>
-                    <b>The ultimate objective behind our every move is to give our customers utmost satisfaction with
-                        our
-                        quality services and support.</b><br>
-                    We try the best possible way out to provide our customers with top-notch services and at affordable
-                    rates. <br>So, give us a Oppurtunity to serve you !
-                </h6>
+            <div class="col-lg-3 col-md-3 col-sm-12 admission-flag">
+                <div class="flag-pos">
+                    <div class="v-align">
+                        <h1>Join<br>
+                            SHS VIDYALAYA<br>
+                            Family
+                            <br>
+                            <button class="btn btn-primary" (click)="knowMore('apply');">Apply Now</button></h1>
+                    </div>
+                </div>
             </div>
 
-          
-        </div>
-    </div>
-</section>
-
-<section class="section-info">
-    <div class="container">
-        <div class="row">
-            
-            <div *ngFor="let item of solution" class="col-lg-4 col-md-4 col-sm-12 panel-container">
-                <div class="panel">
-                    <div class="panel-front {{item.color}}">
-                        <div class="panel-heading">
-                            <div class="icon-circle circle-bg">
+            <ngx-slick-carousel class="carousel col-lg-9 col-md-9 col-sm-12" #slickModal="slick-carousel"
+                [config]="admissionConfig">
+                <div ngxSlickItem *ngFor="let item of admission; index as i" class="slide">
+                    <div class="panel">
+                        <div class="panel-front">
+                            <div class="panel-heading">
                                 <i class="icon icon-medium">
                                     <svg focusable="false">
                                         <use attr.xlink:href="{{item.icon}}"></use>
                                     </svg>
                                 </i>
+
+                                <p>{{item.description}}</p>
                             </div>
-                            <h5>{{item.title}}</h5>
                         </div>
-                        
-                    </div>
-                    <div class="panel-back {{item.color}}">
-                        <h5>{{item.title}}</h5>
-                        <p>{{item.description}}
-                        </p>
-                        <a (click)="gotoPage(item.title)">Read More >></a>
-                        
                     </div>
                 </div>
-            </div>
+            </ngx-slick-carousel>
 
         </div>
+    </div>
+</section>
 
-        <div class="row section-spacing">
-            <div class="col-lg-3 col-md-3 col-sm-12">
-                <img src="assets/images/tulshi-logo.png">
+<section class="section-info">
+    <img src="assets/images/1.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 center">
+                <h1 data-aos="fade-up" data-aos-once="true">We don’t just
+                    teach kids,<br>
+                    we nurture m</h1>
             </div>
+            <div *ngFor="let item of solution" class="col-lg-4 col-md-4 col-sm-12 panel-container" data-aos="fade-up" data-aos-once="true">
+                <div class="panel">
+                    <div class="panel-front">
+                        <div class="panel-heading">
+                            <i class="icon icon-medium">
+                                <svg focusable="false">
+                                    <use attr.xlink:href="{{item.icon}}"></use>
+                                </svg>
+                            </i>
+                        </div>
 
-            <div class="col-lg-9 col-md-9 col-sm-12">
-                <h6>
-                    सूचना को यथासंभव सही रूप में उपलब्ध कराने का हर संभव प्रयास किया गया है | इस वेबसाइट पर उपलब्ध
-                    जानकारी में अशुद्धता के कारण किसी भी व्यक्ति को होने वाली किसी भी प्रकार की हानि के लिए केन्द्रीय
-                    मृदा एवं सामग्री अनुसंधानशाला, जल संसाधन, नदी विकास और गंगा संरक्षण विभाग, जल शक्ति मंत्रालय, भारत
-                    सरकार जिम्मेदार नहीं होगा | किसी भी स्पष्टीकरण के लिए सी.एस.एम.आर.एस. से परामर्श लिया जा सकता है |
-                    कोई भी अनियमितता होने पर उसे सी.एस.एम.आर.एस. के संज्ञान में लाएं |<br><br>
-                    सूचना को यथासंभव सही रूप में उपलब्ध कराने का हर संभव प्रयास किया गया है | इस वेबसाइट पर उपलब्ध
-                    जानकारी में अशुद्धता के कारण किसी भी व्यक्ति को होने वाली किसी भी प्रकार की हानि के लिए केन्द्रीय
-                    मृदा एवं सामग्री अनुसंधानशाला, जल संसाधन, नदी विकास और गंगा संरक्षण विभाग, जल शक्ति मंत्रालय, भारत
-                    सरकार जिम्मेदार नहीं होगा | किसी भी स्पष्टीकरण के लिए सी.एस.एम.आर.एस. से परामर्श लिया जा सकता है |
-                    कोई भी अनियमितता होने पर उसे सी.एस.एम.आर.एस. के संज्ञान में लाएं |
-                </h6>
-
-                    <button type="submit" class="btn btn-warning">Read more</button>
+                    </div>
+                    <div class="panel-back">
+                        <p>{{item.description}}
+                        </p>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -108,66 +92,242 @@
 <section class="section-nofify">
     <div class="container">
         <div class="row">
-        <div *ngFor="let item of notify" class="col-lg-4 col-md-4 col-sm-12 {{item.color}}">
-            <div class="panel">
-                <div class="panel-front">
-                    <div class="panel-heading">
-                        <div class="icon-circle">
-                            <i class="icon icon-medium">
-                                <svg focusable="false">
-                                    <use attr.xlink:href="{{item.icon}}"></use>
-                                </svg>
-                            </i>
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <h1 data-aos="fade-up" data-aos-once="true">What drives<br>
+                    us?</h1>
+            </div>
+            <div *ngFor="let item of notify" class="{{item.col}} col-sm-12" data-aos="fade-up" data-aos-once="true">
+                <div class="panel">
+                    <div class="panel-front">
+                        <div class="panel-heading">
+                            <h5><span>{{item.title}}</span></h5>
+                            <p>{{item.description}}</p>
+                            <ul class="list">
+                                <li *ngFor="let data of item.moreInfo">
+                                    {{data.info}}
+                                </li>
+                            </ul>
                         </div>
-                        <h5>{{item.title}}</h5>
                     </div>
-                    
                 </div>
             </div>
+
         </div>
     </div>
+</section>
+<section class="section-curriculum">
+    <div class="row-f">
+        <div class="col-lg-9 col-md-9 col-sm-12 float-right p0" data-aos="fade-up" data-aos-once="true">
+            <img src="assets/images/2.jpg">
+        </div>
     </div>
-    </section>
+    <div class="clearfix"></div>
+    <div class="container">
+        <div class="row" data-aos="fade-up" data-aos-once="true">
+            <ul ngbNav #collapse #nav="ngbNav" [ngClass]="isOpen ? '' : 'drop-down-active'" [(activeId)]="active" 
+                    class="nav-pills section-curriculum-list col-lg-4 col-md-4 col-sm-12" orientation="vertical">
+                    <li class="d-sm-block d-md-none drop-down" (click)="drowDownToggle()"> 
+                         <i class="icon icon-ex-small">
+                            <svg focusable="false">
+                                <use xlink:href="#icon_downArrow"></use>
+                            </svg>
+                        </i>
+                    </li>
+                    <li ngbNavItem="1" (click)="drowDownToggle()">
+                        <a ngbNavLink>CURRICULUM</a>
+                        <ng-template ngbNavContent>
+                            <p>
+                                An integrated curriculum extends a framework with significant and expressive learning including assessments and evaluation to meet  standards and benchmarks of  boards whose learning objectives are  guide. At SHS VIDYALAYA  we believe that education is not memorizing  facts but training  mind to think creatively and critically! APPLICATION- LEARN HOW TO LEARN -  Students creating meaningful lifelong experiences!
+                            </p>
+                            <ul class="list">
+                                <li>
+                                    <h5>Best possible start to learning</h5>
+                                    <p>Our caring, experienced teachers and teacher assistants give our youngest students  best possible start to learning. Our play-based learning environment captures ir natural curiosity and sense of wonder. Our core subjects are complemented by all core subject classes, including Physical Education, Visual & Performing Arts and Music are all delivered in a warm, nurturing environment.</p>
+                                </li>
+                                <li>
+                                    <h5>A positive foundation for learning</h5>
+                                    <p>At SHS VIDYALAYA  children are introduced to a love of play and learning, by creating opportunities to explore, experiment, solve problems and express mselves as individuals. Sustained learning and  ability to apply concepts facilitates self-confidence and motivation. A deeper understanding of science and math concepts, improved reading and writing skills, fostering positive attitudes and personal growth, critical thinking skills and improved quality of work, will result in remarkable academic success.</p>
+                                </li>
+                                <li>
+                                    <h5>Personal development for life</h5>
+                                    <p> Along with a positive start to learning, our teachers place an emphasis on oral language development and nurturing social relationships. Our teachers know a structured foundation is important for young children, to help m develop and grow into confident individuals.
+                                    An exceptional learning space is provided for our young students, with high-quality trained staff who care and guide  young children.</p>
+                                </li>
+                            </ul>
+                                <button class="btn btn-primary" (click)="knowMore('culture');">KNOW MORE</button>
+                            
+                        </ng-template>
+                    </li>
+                    <li ngbNavItem="2" (click)="drowDownToggle()">
+                        <a ngbNavLink>shs EDGE</a>
+                        <ng-template ngbNavContent>
+                            <p>
+                                 integrated curriculum at shs comprises & aligns with all  learning outcomes in
+                                CBSE, IGCSE & AERO standards.  curriculum includes reading, writing, listening,
+                                speaking, social studies, math, science, health, physical education, music, and visual
+                                arts, experiential learning, public speaking, emphasis on projects, etc. We at shs
+                                will utilize different approaches of integration best suited for  students:
+                            </p>
+                                <ul class="list">
+                                    <li>
+                                        <h5>Multi-Disciplinary Integration -</h5>
+                                        <p>To focus on reading, writing, and communication in all its forms, in language arts. This
+                                approach focuses on integration within one subject area, teaching  content with
+                                deeper understanding.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Inter-disciplinary integration -</h5>
+                                        <p>Focuses on project-based learning in more than one subject area. Interdisciplinary
+                                        integration assembles  teaching of several subjects around common issues, or
+                                        problems, highlighting matic concepts in which a common me is studied.
+                                    </p> </li>
+                                    <li>
+                                        <h5>Trans-disciplinary integration -</h5>
+                                    <p> Involves understanding  student’s interests, and concerns while encouraging m to
+                                        ask questions to inquire about  subject matter from a variety of perspectives.
+                                        Interdisciplinary integration incorporates information, involving students’ interests
+                                        and questions.</p>
+                                    </li>
+                              </ul>
+                                <button class="btn btn-primary" (click)="knowMore('edge');">KNOW MORE</button>
+                            
+                        </ng-template>
+                    </li>
+                    <li ngbNavItem="3" (click)="drowDownToggle()">
+                        <a ngbNavLink>COMMUNICATION
+                            AND LANGUAGE</a>
+                        <ng-template ngbNavContent>
+                            <p>
+                                Communication and language development is about different ways a child understands and communicates, using words, gestures or facial expressions. As an indicator of fine motor skills development and a reflection of cognitive development, reading is one of  best ways to encourage communication and language development. SHS VIDYALAYA  has introduced Guided Reading into  curriculum using a broad spectrum of reading material from different genres to help children become accomplished readers at ir grade levels.
 
-  
+                            </p>
+                        </ng-template>
+                    </li>
+                    <li ngbNavItem="4" (click)="drowDownToggle()">
+                        <a ngbNavLink>PERSONAL, SOCIAL AND
+                            EMOTIONAL DEVELOPMENT</a>
+                        <ng-template ngbNavContent>
+                            <p>
+                                It’s essential for children to feel comfortable, emotionally and physically to learn effectively. Helping children to learn how to regulate and manage ir feelings is, refore, a vital stepping stone for success in learning and life. Children have an innate potential and our specialized life skills program takes m on a journey of exploration enhancing enduring leadership skills. 
+                            </p>
+                        </ng-template>
+                    </li>
+                    <li ngbNavItem="5" (click)="drowDownToggle()">
+                        <a ngbNavLink>PHYSICAL DEVELOPMENT</a>
+                        <ng-template ngbNavContent>
+                            <p>
+                                Children meet a myriad of physical development milestones in  first few years of life, from walking to drawing, which focuses on increasing  skill and performance of  body.  development of a child’s physical skills is developed holistically across all areas of learning.
+                                SHS VIDYALAYA  recognises  benefits of instilling lifelong fitness habits in our students ensuring long term physical, cognitive and psychosocial health & development.  
+                            </p>
+                        </ng-template>
+                    </li>
+                </ul>
 
-<section class="gallery">
+                <div [ngbNavOutlet]="nav" class="col-lg-8 col-md-8 col-sm-12 curriculum-info"></div>
+         </div>
+    </div>
+</section>
+
+
+<div class="clear-float"></div>
+<section class="shsn-league">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 center">
-                <h1>चित्र <span class="heading-highlight">प्रदर्शनी </span></h1>
+                <h1 data-aos="fade-up" data-aos-once="true">SHS VIDYALAYA League</h1>
             </div>
-            <div *ngFor="let item of gallery; index as i" class="{{item.class}} col-sm-12">
-                <div class="panel">
-                    <div class="panel-heading">
-                        <img src="assets/images/gallery{{i+1}}.jpg">
-                    </div>
-                    <div class="panel-body">
-                        <p>{{item.description}}/ <a>
-                            अधिक पढ़ें >></a></p>
-                    </div>
-                </div>
+        
+        <!-- <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem *ngFor="let list of shsnLeague; index as i" class="slide">
+                <img src="assets/images/shsnleague{{i+1}}.jpg" alt="" width="100%">
+                <h6>{{list.name}}</h6>
+                <p>{{list.post}}</p>
+                <p>{{list.desc}}</p>
+            </div>
+        </ngx-slick-carousel> -->
+             <div *ngFor="let list of shsnLeague; index as i" class="col-lg-4 col-md-4 col-sm-12">
+                <img src="assets/images/shsnleague{{i+1}}.jpg" data-aos="fade-up" data-aos-once="true">
+                <h6 data-aos="fade-up" data-aos-once="true">{{list.name}}</h6>
+             </div>
+       
+    </div>
+    </div>
+</section>
+
+
+<section class="testimonials">
+    <img src="assets/images/7.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1  data-aos="fade-up" data-aos-once="true">Parents Speak</h1>
+                <ngb-carousel  #carousel interval="5000" [showNavigationArrows]='true' [showNavigationIndicators]='false'
+                    [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
+                    <ng-template ngbSlide *ngFor="let info of testimonials; index as i">
+                        <p data-aos="fade-up" data-aos-once="true" >
+                            {{info.clientView_1}}
+                        </p>
+                        <p data-aos="fade-up" data-aos-once="true" >
+                            {{info.clientView_2}}
+                        </p>
+                        <p data-aos="fade-up" data-aos-once="true" >
+                            {{info.clientView_3}}
+                        </p>
+                        <p data-aos="fade-up" data-aos-once="true" >
+                            <span class="client-name"> <b>{{info.clientName}}<br>
+                            {{info.desti}}</b></span>
+                        </p>
+                    </ng-template>
+                </ngb-carousel>
             </div>
         </div>
     </div>
 </section>
 
-<div class="clear-float"></div>
-<section class="trusty">
-    <div class="container">
+<div class="container partner">
         <div class="row">
-            <div class="col-sm-12 center">
-                <h1>हमारे <span class="heading-highlight">ट्रस्ट सदस्य </span></h1>
-             </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 float-right">
+                <h2 data-aos="fade-up" data-aos-once="true" >
+                    Our Partners
+                </h2>
+                    <p data-aos="fade-up" data-aos-once="true" >Our quest for creating  perfect learning environment led to collaborating with a few organisations whose vision aligned with ours. Each of  programs are well researched to cater to  needs of  millennials who require constant innovation. With combined ideologies and compassion, successful partnerships are created on a trajectory to deliver nothing but  best! </p>
+               
+            </div>
 
-            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-                <div ngxSlickItem *ngFor="let list of trustmember; index as i" class="slide col-lg-3 col-md-3 col-sm-12">
-                    <img src="assets/images/trust-img-{{i+1}}.jpg" alt="" width="100%">
-                    <h6>{{list.name}}</h6> 
-                    <p>{{list.post}}</p>
-                    <p> {{list.desc}}</p>
+            <ngx-slick-carousel class="carousel col-lg-12 col-md-12 col-sm-12" #slickModal="slick-carousel"
+                [config]="partnerConfig">
+                <div ngxSlickItem *ngFor="let item of partner; index as i" class="slide" data-aos="fade-up" data-aos-once="true">
+                    <div class="panel">
+                       <div class="panel-heading">
+                                <div class="img-box">
+                                    <img src="assets/images/partner{{i+1}}.png">
+                                </div>
+                                <p>{{item.description}}</p>
+                            </div>
+                        <div class="info-view">
+                            <div class="panel-heading">
+                                <div class="img-box">
+                                    <img src="assets/images/partner{{i+1}}.png">
+                                </div>
+                                <h5>{{item.description}}</h5>
+                                <p>{{item.description_2}}</p>
+                                <a href="{{item.link}}" target="blank">{{item.link}}</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </ngx-slick-carousel>
-            </div>
+        </div>
+    </div>
+ 
+<section class="newsletter">
+    <div class="container">
+        <div class="row">
+            <form class="form-inline" action="/action_page.php">
+                <label for="email">Newsletter </label>
+                <input type="email" class="form-control" placeholder="Enter email" id="email">
+                <button type="submit" class="btn btn-primary"> Subscribe</button>
+            </form>
+        </div>
     </div>
 </section>

@@ -1,0 +1,169 @@
+<section class="section-admission">
+    <div class="breadcum">
+        <a>
+            <i class="icon icon-ex-small">
+                <svg focusable="false">
+                    <use xlink:href="#icon_home"></use>
+                </svg>
+            </i>
+        </a>
+        <span> |</span>
+        <a>
+            Join SHS VIDYALAYA Pride
+        </a>
+    </div>
+    <div class="row-f sub-header">
+        <h1  data-aos="fade-up" data-aos-once="true">
+            Join SHS VIDYALAYA Pride
+        </h1>
+
+        <div class="col-lg-11 col-md-11 col-sm-12 admission-info">
+           
+         <div class="panel"  data-aos="fade-up" data-aos-once="true">
+              
+                <div class="panel-body">
+                <p>
+                   <img  class="image-wrap" align="right" src="assets/images/9.jpg"  data-aos="fade-up" data-aos-once="true">
+                     Thank You for expressing interest in shs .  We at shs , welcome all learners to a vibrant school community delivering an ethical education in an academic setting.<br><br>
+                    Our admissions policy ensures an appropriate admission procedure with respect to each application received for admission. We pursue to set a selection standard that is fair and consistent. Assessment for admissions to preprimary and primary would be an analysis to evaluate  developmental preparedness of students, using a range of assessment methods to understand  applicant’s skills. Prior to admissions, we assess applicants to determine ir readiness for our School providing practical and ethical methods of teaching.</p>
+                </div>
+            </div>
+
+            <div class="row add-spec" data-aos="fade-up" data-aos-once="true">
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <p >
+                        We at shs , aspire to ensure that our students nurture ir passion for knowledge so y may pursue ir dreams and become successful 
+                    </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12" *ngFor="let item of admission; index as i">
+                        <div class="panel">
+                            <div class="panel-front">
+                                <div class="panel-heading">
+                                    <i class="icon icon-medium">
+                                        <svg focusable="false">
+                                            <use attr.xlink:href="{{item.icon}}"></use>
+                                        </svg>
+                                    </i>
+                                     
+                                        <p>{{item.description}}</p>
+                                </div>
+                             </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="doodle">
+                Join SHS VIDYALAYA Pride
+            </div>
+        </div>
+    
+
+    </div>
+    <div class="clearfix"></div>
+    <section class="section-admission-2">
+      <div class="container">
+        <div class="row addmin-sec">
+                <div class="col-lg-3 col-md-3 col-sm-12 add-info" *ngFor="let item of admission_2; index as i">
+                    <div class="panel"  data-aos="fade" data-aos-once="true">
+                        <div class="panel-heading">
+                                <h3 class="bar {{item.bar}}">
+                                    {{item.title}}
+                                </h3> 
+                                <p>{{item.description}}</p> 
+                                    
+                            </div>
+                            <button class="btn btn-primary" (click)="open(content)" data-aos="fade-up" data-aos-once="true">APPLY NOW</button>
+                       </div>
+                </div>
+      </div>          
+   </div>
+    
+    </section>
+</section>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Apply</h4>
+          <a class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <i class="icon icon-ex-small">
+              <svg focusable="false">
+                <use xlink:href="#icon_close"></use>
+              </svg>
+            </i>
+          </a>
+    </div>
+    <div class="modal-body apply-form">
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <label for="sel1">Academic Year</label>
+                        <select class="form-control" id="sel1">
+                            <option>2020-2021</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                      <label for="pn">Parent Name</label>
+                      <input type="pn" class="form-control" placeholder="Parent Name" name="pn">
+                  </div>
+                  </div>
+                <div class="row">
+                  <div class="col">
+                    <label for="pn">Parent Email ID</label>
+                    <input type="pi" class="form-control" placeholder="Parent Email ID" name="pi">
+                  </div>
+                    <div class="col">
+                        <label for="phone">Parent Mobile No</label>
+                        <input type="phone" class="form-control" placeholder="Phone" name="phone">
+                    </div>
+                   
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                        <label for="Date">Student DOB</label>
+                        <div class="input-group">
+                          <input class="form-control" placeholder="yyyy-mm-dd"
+                                 name="dp" ngModel="model" ngbDatepicker #d="ngbDatepicker">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+                                <i class="icon icon-ex-small">
+                                    <svg focusable="false">
+                                      <use xlink:href="#icon_calender"></use>
+                                    </svg>
+                                  </i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                 </div>
+                    <div class="col">
+                        <label for="Grade">Grade</label>
+                        <select class="form-control" id="Grade">
+                            <option>Select-class</option>
+                            <option>Grade-1</option>
+                            <option>Grade-2</option>
+                            <option>Grade-3</option>
+                            <option>Grade-4</option>
+                            <option>Grade-5</option>
+                            <option>Grade-6</option>
+                            <option>Grade-7</option>
+                        </select>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-primary">APPLY NOW</button>
+                    </div>
+                </div>
+                
+            </form>
+
+    </div>
+  </ng-template>    
+

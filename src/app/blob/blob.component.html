@@ -1,0 +1,70 @@
+<section class="section-inner-subheader">
+    <div class="breadcum">
+        <a>
+            <i class="icon icon-ex-small">
+                <svg focusable="false">
+                    <use xlink:href="#icon_home"></use>
+                </svg>
+            </i>
+        </a>
+        <span> |</span>
+        <a>
+            SHS VIDYALAYA Corner 
+        </a>
+    </div>
+
+</section>
+
+<!-- <section class="blob-article">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="panel"><h2>Check mate!  We would like to invite you to<br>
+                Gorki campus to take part in our traditional<br>
+                Сambridge Chess Tournament 2020.</h2>
+                <p>
+                    We are a group of committed individuals who believe that “What sculpture is to a block of marble, education is to  human soul.” Joseph Addison.
+                    <br><br>
+Our advisory board comprises of diverse academicians who have a keen interest in providing a unique perspective to our collective vision. Individually y have contributed tremendously to  field of education, toger y bring ir unique capacities to our advisory board supporting continual improvement and sustainability.
+<br><br>
+We want to nurture a confident, compassionate student body that is ready to make a positive difference to  World. We affirm that every child deserves a childhood filled with love and positivism. That is  core belief, with which we will take care of each child, as this will contribute to making exemplary individuals.
+                </p></div>
+                <div class="btn-wrapper">
+                    <div class="div-btn">
+                    <button class="btn btn-primary" (click)="knowMore('culture');">
+                        READ MORE
+                    </button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<section class="recent-article">
+    <div class="container">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <h6>SHS VIDYALAYA Corner</h6>
+            <h2><span>Recent Articles</span></h2>
+        </div>
+        <div class="row">
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
+                [config]="recentConfig">
+                <div ngxSlickItem *ngFor="let item of admission; index as i" class="slide col-lg-4 col-md-4 col-sm-12">
+                    <div class="panel">
+                        <div class="panel-heading">
+                                <p>{{item.date}}</p>
+                                 <h3>{{item.title}}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>{{item.description}}</p>
+                   </div>
+                   <button class="btn btn-primary" (click)="knowMore('culture');">
+                    READ MORE
+                </button>
+                    </div>
+                </div>
+            </ngx-slick-carousel>
+        </div>
+    </div>  
+</section>

@@ -1,0 +1,249 @@
+.section-study-culture{
+	.sub-header{background:#fff;}
+	.row-f, .row{
+		margin:70px 0 100px; 
+		position: relative;
+	}
+	.curriculum{
+		margin-bottom:0px;
+		.curriculum-1{
+			.panel {
+				padding:0px 30px;
+			}
+			padding:0;
+			background:#fff;
+			p{
+				padding:30px;
+			}
+			.img-flag{
+				width:100%;
+				top:-100px;
+			}
+			.image-wrap{
+				width: 50%;
+				margin: -120px 0 26px 50px;
+			}
+		}
+	}
+	.panel {
+		background:#fff;
+		padding:50px;
+		.panel-body{
+			width:50%;
+		}
+		
+	}
+	h1{
+		margin-left:65px;
+		margin-bottom: 35px;
+	}
+	h2{
+		position:relative;
+		padding-bottom:5px;
+		line-height: 60px;
+		margin-bottom: 30px;
+		&::before{
+			content:" ";
+			position: absolute;
+			bottom:0;
+			left:0;
+			width:50px;
+			height:2px;
+			background:#f0f0f0;
+		}
+	}
+	.our-mission{
+		.img-flag{
+			left: 0px;
+			z-index: 1;
+			top: -25px;
+		}
+		.panel{
+			float:right;
+		}
+		.panel-body{
+			margin-left:50%;
+		}
+	}
+	.img-flag{
+		position: absolute;
+		right:0;
+		top:0;
+		width: 50%;
+	}
+	ul.list{
+		margin:0px;
+		li{
+			color:#000;
+			&::before{
+				background:#bf272d;
+			}
+		}
+	}
+}
+
+
+
+.edge-info{
+    margin:100px 0 0 0 !important;
+    .plan-title{
+        margin:80px 0 50px;
+    }
+
+    $bg-colors: #3e65ac, #bf272d, #000;
+@mixin alternating-background {
+  @for $i from 1 through length($bg-colors) {
+    &:nth-child(#{length($bg-colors)}n+#{$i}) {
+        background: (nth($bg-colors, $i));
+        color:#fff;
+    }
+  }
+}
+
+.panel{
+    @include alternating-background;
+    margin-bottom:50px;
+   &.bg-white{
+        background:#fff;
+        p{
+            color:#000; 
+        }
+    }
+    &:nth-child(1){
+       
+        span{
+            background: #3e65ac;
+    }
+    }
+    &:nth-child(2){
+        span{
+            background: #bf272d;
+    } 
+    }
+    &:nth-child(3){
+        span{
+            background: #000;
+    } 
+	}
+	
+	
+	&:nth-child(4){
+        span{
+            background: #3e65ac;
+	}}
+	&:nth-child(5){
+        span{
+            background: #bf272d;
+    }}
+
+    span{
+       
+        z-index: 1;
+        position: relative;
+        padding-right: 15px;
+    }
+}
+
+    .heading-title{
+        position: relative;
+       
+        &::after{
+            content: "";
+            position: absolute;
+            top:18px;
+            left:0px;
+            width:100%;
+            height:1px;
+            background:#fff;
+        }
+	}
+	.extra-info{
+		position: relative;
+		.panel{
+			.panel-body{
+				width:50%;
+			}
+		}
+	}
+}
+
+
+.more-info{
+	h2{
+		margin:30px 0 0;
+	}
+	.panel{
+		background:#bf272d;
+		margin-top: 35px;
+		margin-bottom: 70px;
+		ul.list{
+			li {
+				color:#fff;
+			&::before{
+				background: #fff;
+			}	
+			}
+		}
+	}
+	float:none;
+	clear:both;
+	p{
+		color:#fff;
+	}
+}
+
+.our-belief{
+	h2{
+		color:#bf272d;
+	}
+	.panel{
+		background:#3e65ac;
+		color:#fff;
+		ul.list{
+			li{
+				color: #fff;
+				&::before{
+					background:#fff;
+				}
+		}
+		}
+	}
+}
+
+@media (max-width: 576px){
+	.section-study-culture{
+		.row-f, .row, h1{
+			margin-left:0px; 
+	}
+	.breadcum{
+		margin-left:15px;
+	}
+	.img-flag{
+		padding:15px;
+		position: static;
+		width:100%;
+	}
+}
+.section-study-culture {
+	.our-mission{
+		margin: 0 15px;
+		.panel-body {
+			margin-left: 0;
+		}
+		.panel{
+			float:none;
+		}
+		.img-flag{
+			padding:15px 0;
+		}
+	}
+	.curriculum{
+		.curriculum-1{
+			.image-wrap{
+				width: 100%;
+				margin: 30px 0;
+			}
+		}
+	}
+}
+}

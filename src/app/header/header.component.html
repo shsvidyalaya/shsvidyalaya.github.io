@@ -1,50 +1,367 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <ul class="navbar-nav-list">
-      <li class="nav-item" *ngFor="let item of list; index as i">
-        <a routerLink="{{item.name}}" routerLinkActive="active"
-        skipLocationChange=true>{{item.name}}</a>
-      </li>
-      <!-- <li class="nav-item quick-link">
-        <a class="nav-link" (click)="slideToggel()">
-          <i class="icon icon-ex-small">
-            <svg focusable="false">
-              <use xlink:href="#icon_menu"></use>
-            </svg>
-          </i>
-        </a>
-      </li> -->
-    </ul>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+    <a href="javascript:void(0)" class="logo" routerLink="Home" routerLinkActive="active"
+    skipLocationChange=true>
+      <img src="assets/images/logo.png">
+  </a>
+    <button class="navbar-toggler" type="button" (click)="slideToggel()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   </div>
-</nav>
+    <ul class="navbar-nav navbar-nav-list header-nav">
+      <li class="nav-item login">
+        <a class="nav-link">
+          <i class="icon icon-small">
+            <svg focusable="false">
+              <use xlink:href="#icon_chatroom"></use>
+            </svg>
+          </i><br>
+          <span>Chat</span> 
+        </a>
+      </li>
+      <li class="nav-item login dropping">
+        <a class="nav-link">
+          <i class="icon icon-small">
+            <svg focusable="false">
+              <use xlink:href="#icon_enquiry"></use>
+            </svg>
+          </i><br>
+         <span>Enquiry</span> 
+        </a>
 
-<div class="slider-menu" [ngClass]="isOpen ? '' : 'active'">
-  <a class="close-slide" (click)="slideToggel()">
-    <i class="icon icon-ex-small">
+        <div class="dropper">
+          <a (click)="open(apply)">
+            Admission to Foundation Stage
+          </a>
+          <a (click)="open(apply)">
+            Admission to Preparatory Stage
+          </a>
+          <a (click)="open(apply)">
+            Admission to Middle Stage
+          </a>
+          <a (click)="open(apply)">
+            Admission to Secondary Stage
+          </a>
+        </div>
+  
+        <ng-template #apply let-modal>
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Apply</h4>
+                <a class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                  <i class="icon icon-ex-small">
+                    <svg focusable="false">
+                      <use xlink:href="#icon_close"></use>
+                    </svg>
+                  </i>
+                </a>
+          </div>
+          <div class="modal-body apply-form">
+          
+                  <form>
+                      <div class="row">
+                          <div class="col">
+                              <label for="sel1">Academic Year</label>
+                              <select class="form-control" id="sel1">
+                                  <option>2020-2021</option>
+                              </select>
+                          </div>
+                          <div class="col">
+                            <label for="pn">Parent Name</label>
+                            <input type="pn" class="form-control" placeholder="Parent Name" name="pn">
+                        </div>
+                        </div>
+                      <div class="row">
+                        <div class="col">
+                          <label for="pn">Parent Email ID</label>
+                          <input type="pi" class="form-control" placeholder="Parent Email ID" name="pi">
+                        </div>
+                          <div class="col">
+                              <label for="phone">Parent Mobile No</label>
+                              <input type="phone" class="form-control" placeholder="Phone" name="phone">
+                          </div>
+                         
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group">
+                              <label for="Date">Student DOB</label>
+                              <div class="input-group">
+                                <input class="form-control" placeholder="yyyy-mm-dd"
+                                       name="dp" ngModel="model" ngbDatepicker #d="ngbDatepicker">
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+                                      <i class="icon icon-ex-small">
+                                          <svg focusable="false">
+                                            <use xlink:href="#icon_calender"></use>
+                                          </svg>
+                                        </i>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                       </div>
+                          <div class="col">
+                              <label for="Grade">Grade</label>
+                              <select class="form-control" id="Grade">
+                                  <option>Select-class</option>
+                                  <option>Grade-1</option>
+                                  <option>Grade-2</option>
+                                  <option>Grade-3</option>
+                                  <option>Grade-4</option>
+                                  <option>Grade-5</option>
+                                  <option>Grade-6</option>
+                                  <option>Grade-7</option>
+                              </select>
+                          </div>
+                          
+                      </div>
+                      <div class="row">
+                          <div class="col">
+                              <button class="btn btn-primary">APPLY NOW</button>
+                          </div>
+                      </div>
+                      
+                  </form>
+          
+          </div>
+        </ng-template>  
+      </li>
+      <li class="nav-item login">
+         <a class="nav-link" (click)="openlogin(login)">
+           <i class="icon icon-small">
+             <svg focusable="false">
+               <use xlink:href="#icon_login"></use>
+             </svg>
+           </i><br>
+         <span>Login</span>   
+         </a>
+  
+         <ng-template #login let-modal>
+          <div class="modal-header">
+             <h4 class="modal-title" id="modal-basic-title">Login/ Register</h4>
+                <a class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                  <i class="icon icon-ex-small">
+                    <svg focusable="false">
+                      <use xlink:href="#icon_close"></use>
+                    </svg>
+                  </i>
+                </a>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-12 login-form">
+                <h6>Login</h6>
+                <form action="">
+               
+                <div class="row">
+                  <div class="col">
+                      <label for="userName">User Name</label>
+                      <input type="text" class="form-control" placeholder="User Name" name="userName">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <label for="pass">Password</label>
+                    <input type="password" class="form-control" placeholder="Password" name="pass">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox"> Remember me
+                  </label>
+                  <a href="" class="ml-5">Forgot Password?</a>
+              </div>
+              </div>
+              <button class="btn btn-primary">Login</button>
+              </form>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 login-form">
+                <h6>Register</h6>
+                <form action="">
+               
+                  <div class="row">
+                    <div class="col">
+                        <label for="userName">User Name</label>
+                        <input type="text" class="form-control" placeholder="User Name" name="userName">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label for="email">Email ID</label>
+                      <input type="text" class="form-control" placeholder="Email ID" name="EmailID">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <label for="phoneno">Phone No.</label>
+                    <input type="text" class="form-control" placeholder="Phone Number" name="phoneno">
+                </div>
+              </div>
+                 <button class="btn btn-primary" >Register</button>
+                </form>
+              </div>
+            </div>
+  
+          </div>
+        </ng-template>
+  
+       </li>
+     </ul>
+ 
+  
+  </nav>
+</header>
+
+<nav class="navbar-vertical">
+  <a class="nav-link" (click)="slideToggel()">
+    <i class="icon icon-small">
       <svg focusable="false">
         <use xlink:href="#icon_menu"></use>
       </svg>
     </i>
-  </a>
+  </a> 
+  
+  <div class="social-net">
 
-  <a class="navbar-brand">
-    <i class="icon icon-small">
+    <ul>
+        <li><a href="https://www.facebook.com/shs/" target="_blank">
+                <i class="icon icon-ex-small">
+                    <svg focusable="false">
+                        <use xlink:href="#icon_facebook"></use>
+                    </svg>
+                </i>
+                <span>Facebook</span>
+            </a>
+        </li>
+        <li><a href="https://www.linkedin.com/company/shs" target="_blank">
+                <i class="icon icon-ex-small">
+                    <svg focusable="false">
+                        <use xlink:href="#icon_linkedin"></use>
+                    </svg>
+                </i>
+                <span>Linkedin</span>
+            </a>
+        </li>
+        <li><a href="https://instagram.com/shs?igshid=1qcxjqxa75x37" target="_blank">
+                <i class="icon icon-ex-small">
+                    <svg focusable="false">
+                        <use xlink:href="#icon_instagram"></use>
+                    </svg>
+                </i>
+                <span>Instagram</span>
+            </a>
+        </li>
+
+        <li class="notice-board"><a  target="_blank" (click)="notifyOpen(notify)">
+          <i class="icon icon-ex-small">
+              <svg focusable="false">
+                  <use xlink:href="#icon_noticeBoard"></use>
+              </svg>
+          </i>
+          <span>Notice Board</span>
+       </a>
+    </li>
+    </ul>
+</div>
+</nav>
+
+<ng-template #notify let-modal>
+  <div class="modal-header">
+    <i class="icon icon-ex-small">
       <svg focusable="false">
-        <use xlink:href="#icon_logo_color"></use>
+          <use xlink:href="#icon_noticeBoard"></use>
+      </svg>
+  </i>
+    <h4 class="modal-title" id="modal-basic-title">NOTICE BOARD</h4>
+        <a class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <i class="icon icon-ex-small">
+            <svg focusable="false">
+              <use xlink:href="#icon_close"></use>
+            </svg>
+          </i>
+        </a>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 v-flex">
+       <p>
+        Admissions open<br>
+        for  academic<br>
+        year of 2020 - 2021
+       </p>
+       <button class="btn btn-primary"  aria-label="Close" (click)="knowMore('admission');">APPLY NOW</button>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+       <img src="assets/images/notice-board.png">
+      </div>
+    </div>
+
+  </div>
+</ng-template>
+
+
+<div class="overlay" [ngClass]="isOpen ? '' : 'active'">
+  <img src="assets/images/2.jpg">
+  <a class="nav-link" (click)="slideToggel()">
+    <i class="icon icon-small close-menu">
+      <svg focusable="false">
+        <use xlink:href="#icon_close"></use>
       </svg>
     </i>
-    <div>
-      <span class="company-name">SHS</span>
-      <span class="company-type">TECHNOLOGIES</span>
-    </div>
-  </a>
+  </a> 
+<ul class="main-nav">
+      <li class="main-nav-list" *ngFor="let item of list; index as i">
+        <a class="main-nav-link" routerLink="{{item.name}}" routerLinkActive="active" skipLocationChange=true (click)="slideToggel()">
+          {{item.name | createSpace}}
+        </a>
+      </li>
+    </ul>
 
-  <ul>
-    <li *ngFor="let item of list; index as i" class="menu-list">
-      <a (click)="slideToggel()" routerLink="{{item.name}}" routerLinkActive="active"
-        skipLocationChange=true>{{item.name}}</a>
-    </li>
-  </ul>
-</div>
-<div class="overlay" [ngClass]="isOpen ? '' : 'active'" (click)="slideToggel()">
+    <ul class="navbar-nav navbar-nav-list notify-show">
+      <li class="nav-item social-media">
+
+      <a class="nav-link" href="https://www.facebook.com/shs/" target="_blank">
+          <i class="icon icon-small">
+              <svg focusable="false">
+                  <use xlink:href="#icon_facebook"></use>
+              </svg>
+          </i>
+      </a>
+      </li>
+      <li class="nav-item social-media">
+        <a class="nav-link" href="https://www.linkedin.com/company/shs" target="_blank">
+          <i class="icon icon-small">
+              <svg focusable="false">
+                  <use xlink:href="#icon_linkedin"></use>
+              </svg>
+          </i>
+      </a>
+      </li>
+      <li class="nav-item social-media">
+        <a class="nav-link" href="https://instagram.com/shs?igshid=1qcxjqxa75x37" target="_blank">
+          <i class="icon icon-small">
+              <svg focusable="false">
+                  <use xlink:href="#icon_instagram"></use>
+              </svg>
+          </i>
+      </a>
+       </li>
+       <li class="nav-item social-media">
+        <a class="nav-link" target="_blank" (click)="notifyOpen(notify)">
+          <i class="icon icon-small">
+              <svg focusable="false">
+                  <use xlink:href="#icon_noticeBoard"></use>
+              </svg>
+          </i>
+       </a>
+       </li>
+     </ul>
+    <div class="general-info-nav">
+      <a>Sitemap</a> |
+      <a>Privacy Policy</a> |
+      <a>FAQ</a> |
+      <a>Careers</a>
+    </div>
 </div>
